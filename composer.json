@@ -1,0 +1,81 @@
+{
+  "name": "WordPress Themes and Plugins Managed Through Composer",
+  "type": "project",
+  "license": "MIT",
+  "description": "Managed WordPress themes and plugins using Composer",
+  "homepage": "http://www.sinawiwebdesign.com",
+  "authors": [
+    {
+      "name": "Laith Sinawi",
+      "email": "info@sinawiwebdesign.com",
+      "homepage": "https://github.com/laithsinawi"
+    }
+  ],
+  "keywords": [
+    "wordpress", "composer",  "manage themes", "manage plugins"
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "post-widget-thumbnail/post-widget-thumbnail",
+        "version": "2.0.1",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/laithsinawi/post-widget-thumbnail/archive/master.zip"
+        },
+        "require" : {
+          "composer/installers": "~1.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "laithsinawi/fancy-grid-portfolio",
+        "version": "dev-new-features",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/laithsinawi/fancy-grid-portfolio/archive/new-features.zip"
+        },
+        "require" : {
+          "composer/installers": "~1.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-premium/gravityforms",
+        "version": "dev-master",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/wp-premium/gravityforms/archive/master.zip"
+        },
+        "require" : {
+          "composer/installers": "~1.0"
+        }
+      }
+    }
+  ],
+  "require": {
+    "php": ">=5.6",
+    "laithsinawi/fancy-grid-portfolio": "dev-new-features",
+    "post-widget-thumbnail/post-widget-thumbnail": "^2.0.1",
+    "wp-premium/gravityforms": "dev-master"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "/"
+  }
+}
